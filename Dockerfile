@@ -13,8 +13,8 @@ RUN apt-get update && \
    groupadd -r appgroup && \
    useradd -r -g appgroup appuser
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements-prod.txt .
+RUN pip install --no-cache-dir -r requirements-prod.txt
 
 COPY . .
 RUN chown -R appuser:appgroup /app
